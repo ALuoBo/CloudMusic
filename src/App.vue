@@ -1,16 +1,21 @@
 <script setup>
-
+import Home from './components/home/Home.vue';
 </script>
 
 <template>
-  <svg class="icon" aria-hidden="true">
-    <use xlink:href="#icon-hanbaobao"></use>
-  </svg>
+  <Home/>
 </template>
 
-<style scoped>
-.icon {
-  width: .5rem;
-  height: .5rem;
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+.icon {
+  width: .4rem;
+  height: .4rem;
+}
+
 </style>
