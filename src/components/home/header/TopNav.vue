@@ -1,4 +1,15 @@
 <script setup>
+import { getBanner } from '@/request/api/home.js'
+import { onMounted } from 'vue';
+
+const state = reactive({
+    images: []
+})
+
+onMounted(async () => {
+    const res = await getBanner()
+    state.images = res.data.banners
+})
 </script>
 <template>
     <div class="nav-container">
@@ -6,7 +17,7 @@
             <use xlink:href="#icon-hanbaobao"></use>
         </svg>
         <span>我的</span>
-        <span>发现</span>
+        <span class="active">发现</span>
         <span>云村</span>
         <span>视频</span>
         <svg class="icon" aria-hidden="true">
@@ -15,19 +26,23 @@
     </div>
 </template>
 <style scoped>
-
 .nav-container {
     display: flex;
     width: 100%;
     justify-content: space-around;
-    height: .2rem;
-    padding: .1rem;
-    gap: 0.05rem;
+    align-items: center;
+    height: 1rem;
+    padding: .2rem;
 }
 
 .nav-container span {
-    display: inline-block;
-    width: 0.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1rem;
 }
 
+.active {
+    font-weight: bold;
+}
 </style>

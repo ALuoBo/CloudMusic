@@ -8,10 +8,12 @@ function remSize() {
         deviceWidth = 320
     }
 
+    console.log(deviceWidth);
+
     document.documentElement.style.fontSize = (deviceWidth / 7.5) + 'px'
     document.querySelector('body').style.fontSize = 0.3+'rem'
 }
 remSize()
-window.onreset = () => {
+window.onresize = function(){
     remSize()
 }

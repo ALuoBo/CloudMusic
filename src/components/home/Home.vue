@@ -11,10 +11,8 @@ import Swiper from './header/Swiper.vue';
 </script>
 
 <style scoped>
-  div {
-    width: 12rem;
-  }
-  .swiper {
-    margin-top: .4rem;
-  }
+ div{
+  width: 100%;
+ }
+
 </style>
